@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LibrarySystemWithFirebase.Models.Book>
+
+@{
+    ViewBag.Title = "Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "CreateBook")
+</p>*@
+<table class="table table-striped table-hover">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.BookId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfCopies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfExistingCopies)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfCopies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfExistingCopies)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

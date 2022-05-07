@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LibrarySystemWithFirebase.Models.Borrower>
+
+@{
+    ViewBag.Title = "Borrowers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Readers</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BorrowerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BorrowerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BorrowerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BorrowerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BorrowerId })
+        </td>*@
+    </tr>
+}
+
+</table>
